@@ -13,6 +13,3 @@ function openTab(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 
-function openPackages(evt) {
-  document.getElementById("StartupMessage").style.display = "none";
-  
