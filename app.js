@@ -1,3 +1,9 @@
+'use strict';
+
+let tlmgr;
+
+
+
 function openTab(evt, cityName) {
   var i, tabcontent, tablinks;
   document.getElementById("StartupMessage").style.display = "none";

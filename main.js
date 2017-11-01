@@ -3,6 +3,7 @@
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const tlm = require('./tlmgrprocess');
 
 let mainWindow = null;
 
@@ -12,7 +13,8 @@ app.on('window-all-closed',() => {
 
 app.on('ready', () => {
   mainWindow = new BrowserWindow();
+  tlm.startTlmgr();
   mainWindow.loadURL(`file://${app.getAppPath()}/index.html`);
-  mainWindow.on('closed', () => { mainWindow = null; });
+  mainWindow.on('closed', () => { tlm.stopTlmgr(); mainWindow = null; });
 });
 
